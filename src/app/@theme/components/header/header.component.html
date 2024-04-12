@@ -1,0 +1,69 @@
+<div class="header-container">
+  <div class="logo-container">
+    <img src="../../../../assets/ghipss_logo.png" width="150px" height="75px" />
+    <!-- <a (click)="toggleSidebar()" href="#" class="sidebar-toggle">
+      <nb-icon icon="../../../../assets/ghipss_logo.svg"></nb-icon>
+    </a> -->
+  </div>
+</div>
+
+<div class="header-container">
+  <nb-button-group size="medium" style="float: left" ghost>
+    <button
+      nbButton
+      nbButtonToggle
+      type="button"
+      outline
+      (click)="navigateViewOne()"
+      pressed="true"
+    >
+      <nb-icon icon="cube-outline"></nb-icon>
+      VIEW 1
+    </button>
+    <button
+      nbButton
+      nbButtonToggle
+      type="button"
+      (click)="navigateViewTwo()"
+      outline
+    >
+      <nb-icon icon="cube-outline"></nb-icon>VIEW 2
+    </button>
+    <button
+      nbButton
+      nbButtonToggle
+      type="button"
+      (click)="navigateViewThree()"
+      outline
+    >
+      <nb-icon icon="cube-outline"></nb-icon>VIEW 3
+    </button>
+    <button
+      nbButton
+      nbButtonToggle
+      type="button"
+      (click)="navigateViewFour()"
+      outline
+    >
+      <nb-icon icon="cube-outline"></nb-icon>VIEW 4
+    </button>
+    <button
+      nbButton
+      nbButtonToggle
+      type="button"
+      (click)="navigateViewFive()"
+      outline
+    >
+      <nb-icon icon="cube-outline"></nb-icon>VIEW 5
+    </button>
+    <button
+      nbButton
+      nbButtonToggle
+      type="button"
+      (click)="navigateViewSix()"
+      outline
+    >
+      <nb-icon icon="cube-outline"></nb-icon>VIEW 6
+    </button>
+  </nb-button-group>
+</div>

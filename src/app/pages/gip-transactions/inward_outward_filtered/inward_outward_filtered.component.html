@@ -1,0 +1,80 @@
+<div class="wrapper">
+  <div class="row">
+    <div class="col-lg-8">
+      <nb-card size="giant">
+        <nb-card-header>
+          <nb-button-group size="giant" shape="round" style="float: left">
+            <button
+              nbButton
+              nbButtonToggle
+              type="button"
+              outline
+              (click)="toggleFunc(true)"
+            >
+              INWARD
+            </button>
+            <button
+              nbButton
+              nbButtonToggle
+              type="button"
+              outline
+              (click)="toggleFunc(false)"
+              pressed="true"
+            >
+              OUTWARD
+            </button>
+          </nb-button-group>
+
+          <div style="float: right; margin-top: 15px; margin-left: 10px">
+            <button
+              nbButton
+              (click)="filterDate($event)"
+              class="button"
+              status="success"
+              shape="semi-round"
+            >
+              Submit
+            </button>
+          </div>
+
+          <div class="col-md-2" style="float: right">
+            <label for="subject">Select Date :</label><br />
+            <input
+              fullWidth
+              nbInput
+              formControlName="endDate"
+              placeholder="{{ yesterdate }}"
+              [nbDatepicker]="picker2"
+            />
+            <nb-datepicker #picker2 [max]="max" [min]="min"></nb-datepicker>
+          </div>
+        </nb-card-header>
+        <nb-card-body *ngIf="data">
+          <div *ngIf="toggle">
+            <nb-card-header>Multiple x-axis</nb-card-header>
+            <ngx-echarts-multiple-xaxis></ngx-echarts-multiple-xaxis>
+          </div>
+          <div *ngIf="!toggle">
+            <nb-card-header>Multiple x-axis</nb-card-header>
+            <ngx-echarts-multiple-xaxis></ngx-echarts-multiple-xaxis>
+          </div>
+        </nb-card-body>
+      </nb-card>
+    </div>
+
+    <div class="col-lg-4">
+      <nb-card size="small">
+        <nb-card-header>Multiple x-axis</nb-card-header>
+        <nb-card-body>
+          <div *ngFor="let item of items">
+            <p style="float: right" [style.color]="item.color">
+              {{ item.value }}
+            </p>
+            <p [style.color]="item.color">{{ item.title }}</p>
+            <hr width="100%" [style.borderColor]="item.color" />
+          </div>
+        </nb-card-body>
+      </nb-card>
+    </div>
+  </div>
+</div>

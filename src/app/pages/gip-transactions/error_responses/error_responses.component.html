@@ -1,0 +1,43 @@
+<div class="wrapper">
+  <div class="row">
+    <div class="col-lg-12">
+      <nb-card class="custom-card">
+        <nb-card-header>
+          <nb-button-group size="giant" shape="round" style="float: left">
+            <button
+              nbButton
+              nbButtonToggle
+              type="button"
+              outline
+              (click)="toggleFunc(true)"
+            >
+              INWARD
+            </button>
+            <button
+              nbButton
+              nbButtonToggle
+              type="button"
+              outline
+              (click)="toggleFunc(false)"
+              pressed="true"
+            >
+              OUTWARD
+            </button>
+          </nb-button-group>
+        </nb-card-header>
+        <nb-card-body>
+          <div *ngIf="toggle">
+            <nb-card-header>Multiple x-axis</nb-card-header>
+            <ngx-echarts-bar></ngx-echarts-bar>
+          </div>
+          <div *ngIf="!toggle">
+            <nb-card-header>Multiple x-axis</nb-card-header>
+            <ngx-echarts-bar></ngx-echarts-bar>
+          </div>
+        </nb-card-body>
+        <ng2-smart-table [settings]="settings" [source]="source">
+        </ng2-smart-table>
+      </nb-card>
+    </div>
+  </div>
+</div>
