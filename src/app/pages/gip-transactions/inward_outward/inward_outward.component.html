@@ -1,9 +1,10 @@
 <div class="wrapper">
   <div class="row">
-    <div class="col-lg-8">
+    <div class="col-lg-9">
       <nb-card size="giant">
+        <div id="container" style="width: 100%; height: 600px"></div>
         <nb-card-header>
-          <nb-button-group size="giant" shape="round" style="float: left">
+          <nb-button-group size="medium" shape="round" style="float: left">
             <button
               nbButton
               nbButtonToggle
@@ -25,26 +26,16 @@
             </button>
           </nb-button-group>
         </nb-card-header>
-        <nb-card-body>
-          <div *ngIf="toggle">
-            <nb-card-header>Multiple x-axis</nb-card-header>
-            <ngx-echarts-multiple-xaxis></ngx-echarts-multiple-xaxis>
-          </div>
-          <div *ngIf="!toggle">
-            <nb-card-header>Multiple x-axis</nb-card-header>
-            <ngx-echarts-multiple-xaxis></ngx-echarts-multiple-xaxis>
-          </div>
-        </nb-card-body>
       </nb-card>
     </div>
 
-    <div class="col-lg-4">
+    <div class="col-lg-3">
       <div class="row">
         <div class="col-lg-12">
           <nb-card size="small">
-            <nb-card-header>Multiple x-axis</nb-card-header>
+            <nb-card-header>Volume {{ timestamp }}</nb-card-header>
             <nb-card-body>
-              <div *ngFor="let item of items">
+              <div *ngFor="let item of period">
                 <p style="float: right" [style.color]="item.color">
                   {{ item.value }}
                 </p>
@@ -57,9 +48,9 @@
 
         <div class="col-lg-12">
           <nb-card size="small">
-            <nb-card-header>Multiple x-axis</nb-card-header>
+            <nb-card-header>Volume For Today</nb-card-header>
             <nb-card-body>
-              <div *ngFor="let item of items">
+              <div *ngFor="let item of allDay">
                 <p style="float: right" [style.color]="item.color">
                   {{ item.value }}
                 </p>
