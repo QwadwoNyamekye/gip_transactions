@@ -4,6 +4,7 @@ import { NgxChartsModule } from "@swimlane/ngx-charts";
 import { ChartModule } from "angular2-chartjs";
 import { Ng2SmartTableModule } from "ng2-smart-table";
 import { HighchartsChartModule } from "highcharts-angular";
+import { NbSpinnerModule } from "@nebular/theme";
 import {
   NbButtonModule,
   NbCardModule,
@@ -17,11 +18,9 @@ import { ThemeModule } from "../../@theme/theme.module";
 
 import { ChartsRoutingModule, routedComponents } from "./charts-routing.module";
 import { EchartsBarComponent } from "./error_responses/echarts-bar.component";
-import { EchartsPieComponent } from "./nec_ftc_ratio/echarts-pie.component";
 
 const components = [
   EchartsBarComponent,
-  EchartsPieComponent,
 ];
 
 @NgModule({
@@ -38,6 +37,7 @@ const components = [
     NgxEchartsModule,
     NgxChartsModule,
     ChartModule,
+    NbSpinnerModule,
     NbCardModule,
   ],
   declarations: [...routedComponents, ...components],

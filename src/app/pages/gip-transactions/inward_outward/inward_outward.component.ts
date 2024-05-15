@@ -196,7 +196,6 @@ export class InwardOutwardComponent implements OnInit {
         labels: {
           formatter: function () {
             var chart = Highcharts.charts[0];
-            // return Highcharts.dateFormat('%H:%M', this.value);
             return Highcharts.dateFormat("%l%p", Number(this.value));
           },
         },

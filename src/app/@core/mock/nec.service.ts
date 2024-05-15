@@ -134,6 +134,12 @@ export class APIService {
     return this.http
       .get(this.baseUrl + "/get_stats")
       .pipe((response) => response);
+  }  
+  
+  getStatsHist(date) {
+    return this.http
+      .get(this.baseUrl + "/get_stats_hist/"  + date)
+      .pipe((response) => response);
   }
 
   getIssuerErrors() {
@@ -169,6 +175,12 @@ export class APIService {
   sendLineChartHist(date) {
     return this.http
       .get(this.baseUrl + "/send_linechart_hist/" + date)
+      .pipe((response) => response);
+  }
+  
+  recieveLineChartHist(date) {
+    return this.http
+      .get(this.baseUrl + "/receive_linechart_hist/" + date)
       .pipe((response) => response);
   }
 }

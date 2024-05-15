@@ -35,9 +35,6 @@ export class EchartsBarComponent implements OnDestroy, OnInit {
           values = values[1];
         }
         issuerBanks = this.extractIssuerBanks(this.issuerErrors);
-        console.log("^^^^^^^^^^^^^^^^^^^^^");
-        console.log(issuerBanks);
-        console.log(values);
         this.generateGraph(values, issuerBanks);
       },
       (error) => {},
