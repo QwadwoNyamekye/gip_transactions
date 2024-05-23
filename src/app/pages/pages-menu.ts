@@ -1,5 +1,3 @@
-import { NbMenuItem } from "@nebular/theme";
-
 var user_path = {
   title: "User",
   icon: "briefcase",

@@ -10,6 +10,7 @@ export const routes: Routes = [
       import("./pages/pages.module").then((m) => m.PagesModule),
   },
   { path: "", redirectTo: "pages/charts/inward-outward", pathMatch: "full" },
+  { path: "error", redirectTo: "miscellaneous/404", pathMatch: "full" },
   { path: "**", redirectTo: "pages/charts/inward-outward" },
 ];
 

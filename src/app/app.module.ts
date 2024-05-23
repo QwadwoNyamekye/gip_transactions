@@ -24,6 +24,8 @@ import {
   NbWindowModule,
 } from "@nebular/theme";
 import { AuthGuard } from './auth-guard.service';
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment';
 
 @NgModule({
   declarations: [AppComponent],
@@ -46,7 +48,13 @@ import { AuthGuard } from './auth-guard.service';
     ThemeModule.forRoot(),
     NbCardModule,
     NbTableModule,
-    NbButtonModule
+    NbButtonModule,
+    ServiceWorkerModule.register('ngsw-worker.js', {
+      enabled: environment.production,
+      // Register the ServiceWorker as soon as the application is stable
+      // or after 30 seconds (whichever comes first).
+      registrationStrategy: 'registerWhenStable:30000'
+    })
   ],
   providers: [AuthGuard],
   bootstrap: [AppComponent, NbRowComponent],
